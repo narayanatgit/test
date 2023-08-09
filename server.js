@@ -5,16 +5,16 @@ app.use(body.json());
 app.use(express.json())
 app.use(body.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 8080;
-var i=0;
+ i=0;
 // Greeting 
-var a=[]
+ a=[]
 app.get('/greeting', (req, res) => {
     return res.send('Hello world!');
 });
 
 // Register Employee
 app.post('/employee', (req, res) => {
-    console.log(req.body)
+    
     a.push({  id:++i,
         name:req.body.name,
         city:req.body.city})
@@ -29,14 +29,9 @@ app.post('/employee', (req, res) => {
 console.log(a)
 // Get Employee details
 app.get('/employee/:id', (req, res) => {
-        id=req.params
-   data=a.map((m)=>
-   {
-      if(m.id==id)
-      {
-        return m
-      }
-   })
+        id=req.params.id
+   data=a[parseInt(id)-1]
+   console.log(data)
     return res.send( 
                {
                   content:data

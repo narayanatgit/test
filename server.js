@@ -15,11 +15,11 @@ app.get('/greeting', (req, res) => {
 // Register Employee
 app.post('/employee', (req, res) => {
     
-    a.push({  id:++i,
+    a.push({  employeeId:++i,
         name:req.body.name,
         city:req.body.city})
        
-        content= { id:i,
+        content= {  employeeId:i,
         name:req.body.name,
         city:req.body.city}
     return res.send(

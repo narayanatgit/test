@@ -19,33 +19,33 @@ app.post('/employee', (req, res) => {
         name:req.body.name,
         city:req.body.city})
        
-    return res.send({
-        id:i,
-       name:req.body.name,
-       city:req.body.city
+        content= { id:i,
+        name:req.body.name,
+        city:req.body.city}
+    return res.send(
+        content
+      
 
-    });
+    );
 });
 
 // Get Employee details
 app.get('/employee/:id', (req, res) => {
         id=req.params.id
    data=a[parseInt(id)-1]
-   
+   content=data
     return res.send( 
-               {
-                  content:data
-               }
+               content
     );
 });
 console.log(a)
 // Get all Employee details
 
 app.get('/employees/all', (req, res) => {
-
-    return res.send({
-        content:a
-    });
+content=a
+    return res.send(
+        content
+    );
 });
 
 // Update Employee

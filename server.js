@@ -22,8 +22,8 @@ app.post('/employee', (req, res) => {
         content= {  employeeId:i,
         name:req.body.name,
         city:req.body.city}
-    return res.send(
-        content
+    return res.status(201).json(
+        {content}
       
 
     );

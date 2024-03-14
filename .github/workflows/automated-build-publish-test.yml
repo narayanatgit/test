@@ -13,6 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: node --version 
       - uses: actions/checkout@v3
-      - name: sample test
-        run: echo "hello world"
+      - run: npm --version
+      - run: npm install
+      - run: npm start

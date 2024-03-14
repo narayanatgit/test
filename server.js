@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 8080;
  i=0;
 // Greeting 
  a=[]
-app.get('/greeting', (req, res) => {
-    return res.send('Hello world!');
+app.get('/', (req, res) => {
+    return res.status(200).json({"data":"hello world"});
 });
 
 // Register Employee
